@@ -1,7 +1,10 @@
+import PageNAv from "../components/PageNAv";
+
 const Product = () => {
   return (
     <div>
-      <h1>hello</h1>
+      <PageNAv />
+      <h1>product</h1>
     </div>
   );
 };

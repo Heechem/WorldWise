@@ -1,7 +1,12 @@
-import React from "react";
+import PageNAv from "../components/PageNAv";
 
 const PageNotFound = () => {
-  return <div>PageNotFound</div>;
+  return (
+    <div>
+      <PageNAv />
+      PageNotFound
+    </div>
+  );
 };
 
 export default PageNotFound;
