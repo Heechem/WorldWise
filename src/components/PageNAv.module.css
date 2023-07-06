@@ -7,3 +7,11 @@ ul {
   display: flex;
   justify-content: space-between;
 }
+
+.test {
+  background-color: red;
+}
+
+.nav :global(.active) {
+  background-color: aquamarine;
+}
