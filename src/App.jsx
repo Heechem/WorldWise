@@ -4,6 +4,7 @@ import Pricing from "./pages/Pricing";
 import Homepage from "./pages/Homepage";
 import PageNotFound from "./pages/PageNotFound";
 import AppLayout from "./pages/AppLayout";
+import Login from "./pages/Login";
 
 const App = () => {
   return (
@@ -25,6 +26,10 @@ const App = () => {
           path="*"
           element={<PageNotFound />}
         />{" "}
+        <Route
+          path="/login"
+          element={<Login />}
+        />
         <Route
           path="app"
           element={<AppLayout />}
