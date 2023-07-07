@@ -35,6 +35,10 @@ const App = () => {
           element={<AppLayout />}
         >
           <Route
+            index
+            element={<p>List of cities</p>}
+          />
+          <Route
             path="cities"
             element={<p>List of cities</p>}
           />
