@@ -5,6 +5,7 @@ import Homepage from "./pages/Homepage";
 import PageNotFound from "./pages/PageNotFound";
 import AppLayout from "./pages/AppLayout";
 import Login from "./pages/Login";
+import CityList from "./components/CityList";
 
 const App = () => {
   return (
@@ -36,11 +37,11 @@ const App = () => {
         >
           <Route
             index
-            element={<p>List of cities</p>}
+            element={<CityList />}
           />
           <Route
             path="cities"
-            element={<p>List of cities</p>}
+            element={<CityList />}
           />
           <Route
             path="countries"
