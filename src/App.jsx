@@ -43,7 +43,7 @@ const App = () => {
             element={<p>List of cities</p>}
           />
           <Route
-            path="countrie"
+            path="countries"
             element={<p>Countries</p>}
           />
           <Route
