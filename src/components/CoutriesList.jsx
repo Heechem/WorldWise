@@ -5,7 +5,6 @@ import Spinner from "./Spinner";
 import CountryItem from "./CountryItem";
 
 const CountriesList = ({ cities, isLoading }) => {
-  console.log(cities);
   if (isLoading) return <Spinner />;
 
   if (!cities.length)
@@ -23,7 +22,10 @@ const CountriesList = ({ cities, isLoading }) => {
   return (
     <ul className={styles.countryList}>
       {countries.map((country) => (
-        <CountryItem country={country} />
+        <CountryItem
+          country={country}
+          key={country.country}
+        />
       ))}
     </ul>
   );
