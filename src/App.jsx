@@ -51,7 +51,7 @@ const App = () => {
           element={<PageNotFound />}
         />{" "}
         <Route
-          path="/login"
+          path="login"
           element={<Login />}
         />
         <Route
