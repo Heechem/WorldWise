@@ -44,6 +44,7 @@ function CitiesProvider({ children }) {
         cities,
         isLoading,
         currentCity,
+        getCity,
       }}
     >
       {children}
