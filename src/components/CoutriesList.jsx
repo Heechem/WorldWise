@@ -1,9 +1,8 @@
-import CityItem from "./CityItem";
-import styles from "./CountryList.module.css";
-import Message from "./Message";
-import Spinner from "./Spinner";
-import CountryItem from "./CountryItem";
-import { useCitites } from "../contexts/CitiesContext";
+import { useCitites } from '../contexts/CitiesContext';
+import CountryItem from './CountryItem';
+import styles from './CountryList.module.css';
+import Message from './Message';
+import Spinner from './Spinner';
 
 const CountriesList = () => {
   const { cities, isLoading } = useCitites();
@@ -12,7 +11,7 @@ const CountriesList = () => {
   if (!cities.length)
     return (
       <Message
-        message={"Add your first city by clicking on a city on the map"}
+        message={'Add your first city by clicking on a city on the map'}
       />
     );
 

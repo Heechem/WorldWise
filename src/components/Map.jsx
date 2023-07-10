@@ -1,21 +1,21 @@
-import React, { useState } from "react";
-import styles from "./Map.module.css";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import styles from './Map.module.css';
+import { useState } from 'react';
 
 const Map = () => {
   const navigate = useNavigate();
   const [mapPosition, setMapPosition] = useState([40, 0]);
 
   const [searchParams, setSearchParams] = useSearchParams();
-  const lat = searchParams.get("lat");
-  const lng = searchParams.get("lng");
+  const lat = searchParams.get('lat');
+  const lng = searchParams.get('lng');
 
   return (
     <div
       className={styles.mapContainer}
       onClick={() => {
-        navigate("form");
+        navigate('form');
       }}
     >
       <MapContainer
