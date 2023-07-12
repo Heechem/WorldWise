@@ -11,6 +11,7 @@ import ButtonBack from './ButtonBack';
 import styles from './Form.module.css';
 import Message from './Message';
 import Spinner from './Spinner';
+import { useNavigate } from 'react-router-dom';
 
 export function convertToEmoji(countryCode) {
   const codePoints = countryCode
@@ -32,6 +33,7 @@ function Form() {
   const [geoCodeError, setGeoCodeError] = useState('');
   const [isLoadingGeolocation, setIsLoadingGeolocation] = useState(false);
   const { createCity, isLoading } = useCitites();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!lat && !lng) return;
@@ -57,7 +59,8 @@ function Form() {
     }
     fetchCityData();
   }, [lat, lng]);
-  function handleSubmit(e) {
+
+  async function handleSubmit(e) {
     e.preventDefault();
     if (!cityName || !date) return;
     const newCity = {
@@ -68,7 +71,8 @@ function Form() {
       notes,
       position: { lat, lng },
     };
-    createCity(newCity);
+    await createCity(newCity);
+    navigate('/app/cities');
   }
 
   if (isLoadingGeolocation) return <Spinner />;
