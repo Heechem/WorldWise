@@ -31,7 +31,7 @@ function Form() {
   const [emoji, setEmoji] = useState('');
   const [geoCodeError, setGeoCodeError] = useState('');
   const [isLoadingGeolocation, setIsLoadingGeolocation] = useState(false);
-  const { createCity } = useCitites();
+  const { createCity, isLoading } = useCitites();
 
   useEffect(() => {
     if (!lat && !lng) return;
@@ -77,7 +77,7 @@ function Form() {
 
   return (
     <form
-      className={styles.form}
+      className={`${styles.form} ${isLoading ? styles.loading : ''}`}
       onSubmit={handleSubmit}
     >
       <div className={styles.row}>

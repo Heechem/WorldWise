@@ -71,6 +71,42 @@
         "lng": "23.4228515625"
       },
       "id": 98443200
+    },
+    {
+      "cityName": "Morfovouni",
+      "country": "Greece",
+      "emoji": "🇬🇷",
+      "date": "2023-07-12T13:48:21.420Z",
+      "notes": "",
+      "position": {
+        "lat": "39.26628442213066",
+        "lng": "21.796875000000004"
+      },
+      "id": 98443201
+    },
+    {
+      "cityName": "Morfovouni",
+      "country": "Greece",
+      "emoji": "🇬🇷",
+      "date": "2023-07-12T13:48:36.848Z",
+      "notes": "",
+      "position": {
+        "lat": "39.26628442213066",
+        "lng": "21.796875000000004"
+      },
+      "id": 98443202
+    },
+    {
+      "cityName": "Lukavac",
+      "country": "Bosnia and Herzegovina",
+      "emoji": "🇧🇦",
+      "date": "2023-07-12T13:48:36.848Z",
+      "notes": "",
+      "position": {
+        "lat": "44.465151013519645",
+        "lng": "18.457031250000004"
+      },
+      "id": 98443203
     }
   ]
 }
