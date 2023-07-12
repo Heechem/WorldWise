@@ -1,6 +1,6 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from 'react';
 
-const BASE_URL = "http://localhost:8000/";
+const BASE_URL = 'http://localhost:8000/';
 
 const CitiesContext = createContext();
 
@@ -17,7 +17,7 @@ function CitiesProvider({ children }) {
         const data = await res.json();
         setCities(data);
       } catch {
-        alert("There is an error ");
+        alert('There is an error ');
       } finally {
         setIsLoading(false);
       }
@@ -32,7 +32,23 @@ function CitiesProvider({ children }) {
       const data = await res.json();
       setCurrentCity(data);
     } catch {
-      alert("There is an error ");
+      alert('There is an error ');
+    } finally {
+      setIsLoading(false);
+    }
+  }
+  async function createCity(newCity) {
+    try {
+      setIsLoading(true);
+      const res = await fetch(`${BASE_URL}cities`, {
+        method: 'POST',
+        body: JSON.stringify(newCity),
+        headers: { 'Content-Type': 'application/json' },
+      });
+      const data = await res.json();
+      setCities((cities) => [...cities, data]);
+    } catch {
+      alert('There is an error ');
     } finally {
       setIsLoading(false);
     }
@@ -45,6 +61,7 @@ function CitiesProvider({ children }) {
         isLoading,
         currentCity,
         getCity,
+        createCity,
       }}
     >
       {children}
@@ -55,7 +72,7 @@ function CitiesProvider({ children }) {
 function useCitites() {
   const context = useContext(CitiesContext);
   if (context === undefined)
-    throw new Error("the context is used where it shouldnt");
+    throw new Error('the context is used where it shouldnt');
   return context;
 }
 
