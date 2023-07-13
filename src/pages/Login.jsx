@@ -18,7 +18,6 @@ export default function Login() {
     if (email && password) login(email, password);
   }
   useEffect(() => {
-    console.log(123);
     if (isAuthenticated) navigate('/app', { replace: true });
   }, [isAuthenticated, navigate]);
 

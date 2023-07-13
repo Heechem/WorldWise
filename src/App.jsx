@@ -11,6 +11,7 @@ import Pricing from './pages/Pricing';
 import Product from './pages/Product';
 import { CitiesProvider } from './contexts/CitiesContext';
 import { AuthProvider } from './contexts/FakeAuthContext';
+import ProtectedRoute from './pages/ProtectedRoute';
 
 const App = () => {
   return (
@@ -40,7 +41,12 @@ const App = () => {
             />
             <Route
               path="app"
-              element={<AppLayout />}
+              element={
+                <ProtectedRoute>
+                  {' '}
+                  <AppLayout />{' '}
+                </ProtectedRoute>
+              }
             >
               <Route
                 index
