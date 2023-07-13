@@ -1,4 +1,4 @@
-const { createContext, useContext, useReducer } = require('react');
+import { createContext, useContext, useReducer } from 'react';
 
 const AuthContext = createContext();
 
@@ -53,6 +53,7 @@ function useAuth() {
   const context = useContext(AuthContext);
   if (context === undefined)
     throw new Error('Context was used outside of the provider ');
+  return context;
 }
 
 export { AuthProvider, useAuth };
