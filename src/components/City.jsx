@@ -1,16 +1,16 @@
-import { useParams, useSearchParams } from "react-router-dom";
-import styles from "./City.module.css";
-import { useEffect, useState } from "react";
-import { useCitites } from "../contexts/CitiesContext";
-import Spinner from "./Spinner";
-import ButtonBack from "./ButtonBack";
+import { useParams, useSearchParams } from 'react-router-dom';
+import styles from './City.module.css';
+import { useEffect, useState } from 'react';
+import { useCitites } from '../contexts/CitiesContext';
+import Spinner from './Spinner';
+import ButtonBack from './ButtonBack';
 
 const formatDate = (date) =>
-  new Intl.DateTimeFormat("en", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-    weekday: "long",
+  new Intl.DateTimeFormat('en', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    weekday: 'long',
   }).format(new Date(date));
 
 function City() {
@@ -21,7 +21,7 @@ function City() {
     function () {
       getCity(id);
     },
-    [id]
+    [id, getCity]
   );
 
   if (isLoading) return <Spinner />;
